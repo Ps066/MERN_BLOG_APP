@@ -1,0 +1,87 @@
+.settingsPage{
+    display: flex;
+}
+
+.settingsWrapper{
+    flex: 10;
+    padding: 20px;
+}
+
+.settingsTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settingUpdateTitle{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: teal;
+}
+
+.settingDeleteTitle{
+    color: tomato;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.settingsForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsForm > label {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.settingsForm > input {
+    color: #666;
+    margin: 10px 0;
+    height: 30px;
+    padding: 2px 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+
+.settingsPP{
+    margin: 10px 0px;
+    position: relative;
+    width: fit-content;
+}
+
+.settingProfileImg{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.settingsPPIcon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-size: 25px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer; /* Indicates it's clickable */
+    padding: 10px; /* Adjust padding for a better click area */
+}
+
+.settingsPP:hover .settingsPPIcon {
+    display: block; /* Show icon when hovering over the parent container */
+}
+
+.settingsSubmit{
+    width: 150px;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: teal;
+    margin-top: 20px;
+    padding: 10px;
+}
