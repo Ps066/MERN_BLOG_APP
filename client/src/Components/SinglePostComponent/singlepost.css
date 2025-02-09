@@ -1,0 +1,111 @@
+.singlePost{
+    flex: 10;
+}
+
+.singlePostWrapper{
+    padding: 20px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.singlePostImg{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.singlePostTitle{
+    text-align: center;
+    margin: 10px;
+    font-family: "Lora", serif;
+    font-size: 20px;
+}
+
+.singlepostTitleEdit{
+    margin: 10px;
+    font-family: "Lora", serif;
+    font-size: 20px;
+    text-align: center;
+    color: #444;
+    border: none;
+    border-bottom: 1px solid #444;
+}
+
+.singlepostTitleEdit:focus{
+    outline: none;
+}
+
+.singlePostEditContainer{
+    float: right;
+    font-size: 16px;
+}
+
+.singlePostEditIcon{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.singlePostEditIcon:first-child{
+    color: teal;
+}
+
+.singlePostEditIcon:last-child{
+    color: tomato;
+}
+.singlePostInfo{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #444;
+    font-family: "Varela Round", serif;
+}
+
+.singlePostDec{
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.singlePostDec::first-letter{
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.singlePostDecEdit{
+    font-size: 18px;/* Hides the scrollbar */
+    resize: none;     /* Prevents the user from resizing the textarea */
+    height: 30vh;
+    color: #666;
+    padding: 10px;
+    border: 1px solid #666;
+    scrollbar-width: thin;
+    scrollbar-track-color: #fff;
+}
+
+
+.updateBtn{
+    margin-top: 20px;
+    width: 150px;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-end;
+    transition: all 0.3s;
+}
+
+.updateBtn:hover{
+    background-color: rgb(1, 103, 103);
+}
+
+.updateBtn:active{
+    transform: scale(0.9);
+}
