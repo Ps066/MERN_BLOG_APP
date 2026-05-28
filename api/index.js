@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const multer = require('multer');
-const path = require('path');
+// const path = require('path');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('./utils/cloudinary');
 
@@ -19,7 +19,7 @@ dotenv.config();
 app.use(express.json());
 
 // public the images folder
-app.use('/images',express.static(path.join(__dirname,"/images")))
+// app.use('/images',express.static(path.join(__dirname,"/images")))
 
 // variables from the .env file
 const PORT = process.env.PORT;
@@ -51,15 +51,17 @@ const storage = new CloudinaryStorage({
     }
 })
 
-const uplaod = multer({storage:storage});
-app.post("/api/upload", uplaod.single("file"), (req,res)=>{  // we will pass the file parameter from formdata here (transfering the file)
+const upload = multer({ storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
     try {
-        res.status(200).json({ message: "Image uploaded successfully", url: req.file.path });
-        
+        res.status(200).json({
+            message: "Image uploaded successfully",
+            url: req.file.path
+        });
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error);
     }
-})
+});
 
 //all routes
 app.use('/api/auth', authRoutes);
