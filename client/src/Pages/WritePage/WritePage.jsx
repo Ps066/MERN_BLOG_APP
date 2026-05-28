@@ -21,19 +21,20 @@ const WritePage = () => {
         dec,
         username:user.username,
       }
-      if(file){
-        const data = new FormData();    // created a blank formData
-        const filename = Date.now()+file.name;  // created a filename
-        data.append("name",filename);   // added name 
-        data.append("file",file);      // added file
-        // newPost.photo = filename;   // given the same filename to the newPost element 
-          newPost.photo = response.data.url;
-        try {           // now trying to send just our blank form to the /upload url with name and file as params
-          await axios.post('/upload',data);
-        } catch (error) {
-          console.log(error);
-        }
-      }
+     if(file){
+  const data = new FormData();
+
+  data.append("file", file);
+
+  try {
+    const res = await axios.post("/upload", data);
+
+    newPost.photo = res.data.url;
+
+  } catch (error) {
+    console.log(error);
+  }
+}
       try {
         const res = await axios.post("/post", newPost);
         window.location.replace("/post/"+res.data._id);
