@@ -9,7 +9,6 @@ const Post = ({ post }) => {
       {post.photo && (
         <img
            src={post.photo}
-          {/* src={PF+post.photo} */}
           alt=''
           className='postImg'
         />
