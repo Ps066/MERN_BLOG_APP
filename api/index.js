@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const multer = require('multer');
+const cors = require("cors");
 // const path = require('path');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('./utils/cloudinary');
@@ -17,6 +18,7 @@ const categoryRoutes = require('./routes/category');
 const app = express();
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 // public the images folder
 // app.use('/images',express.static(path.join(__dirname,"/images")))
