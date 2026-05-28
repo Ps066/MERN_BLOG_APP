@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://YOUR_RENDER_BACKEND_URL.onrender.com/api",
+  baseURL: "https://mern-blog-app-mni1.onrender.com/api",
 });
