@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 
 const Post = ({ post }) => {
    //path to images
-  const PF = process.env.REACT_APP_IMAGE_PATH;
+  // const PF = process.env.REACT_APP_IMAGE_PATH;
   return (
     <div className='post'>
       {post.photo && (
         <img
-          src={PF+post.photo}
+           src={post.photo}
+          {/* src={PF+post.photo} */}
           alt=''
           className='postImg'
         />
