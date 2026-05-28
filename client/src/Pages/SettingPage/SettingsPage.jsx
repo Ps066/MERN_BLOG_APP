@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import SideBar from "../../Components/SideBarComponent/SideBar";
 import "./settingspage.css";
 import { AuthContext } from "../../Context/Context";
-import axios from "axios";
+import axios from "../../api"
 import { useNavigate } from "react-router-dom";
 
 

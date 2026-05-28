@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./registerpage.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../../api"
 
 const RegisterPage = () => {
   // useState for storeing the values

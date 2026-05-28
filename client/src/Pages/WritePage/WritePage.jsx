@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import "./writepage.css";
 import { AuthContext } from "../../Context/Context";
-import axios from "axios";
+import axios from "../../api"
 
 const WritePage = () => {
     // useState methods to fetch the data

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./singlepost.css";
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../api"
 import { AuthContext } from "../../Context/Context";
 
 const SinglePost = () => {
