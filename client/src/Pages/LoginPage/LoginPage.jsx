@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './loginpage.css'
 import { useContext, useRef } from 'react'
 import { AuthContext } from '../../Context/Context';
-import axios from 'axios';
+import axios from "../../api"
 import CircularProgress from '@mui/material/CircularProgress';
 
 const LoginPage = () => {
