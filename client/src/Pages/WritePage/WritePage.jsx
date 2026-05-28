@@ -26,7 +26,8 @@ const WritePage = () => {
         const filename = Date.now()+file.name;  // created a filename
         data.append("name",filename);   // added name 
         data.append("file",file);      // added file
-        newPost.photo = filename;   // given the same filename to the newPost element 
+        // newPost.photo = filename;   // given the same filename to the newPost element 
+          newPost.photo = response.data.url;
         try {           // now trying to send just our blank form to the /upload url with name and file as params
           await axios.post('/upload',data);
         } catch (error) {
