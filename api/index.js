@@ -33,23 +33,23 @@ mongoose.connect(MONGO).then(()=>{
 })
 
 // image upload (using multer storage)
-const storage = multer.diskStorage({
-    destination: (req,file,cb)=>{
-        cb(null,"images");
-    },
-    filename: (req,file,cb)=>{
-        cb(null, req.body.name);     // we are trying to feed our own created FormData here with name params 
-    }
-})
-
-// image uplaod to cloudinary storage 
-// const storage = new CloudinaryStorage({
-//     cloudinary: cloudinary,
-//     params: {
-//         folder: "blog_app_uploads",  // Change folder name as needed
-//         allowed_formats: ['jpg', 'jpeg', 'png', 'gif']
+// const storage = multer.diskStorage({
+//     destination: (req,file,cb)=>{
+//         cb(null,"images");
+//     },
+//     filename: (req,file,cb)=>{
+//         cb(null, req.body.name);     // we are trying to feed our own created FormData here with name params 
 //     }
 // })
+
+// image uplaod to cloudinary storage 
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: "blog_app_uploads",  // Change folder name as needed
+        allowed_formats: ['jpg', 'jpeg', 'png', 'gif']
+    }
+})
 
 const uplaod = multer({storage:storage});
 app.post("/api/upload", uplaod.single("file"), (req,res)=>{  // we will pass the file parameter from formdata here (transfering the file)
