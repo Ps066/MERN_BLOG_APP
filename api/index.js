@@ -18,10 +18,7 @@ const categoryRoutes = require('./routes/category');
 const app = express();
 dotenv.config();
 app.use(express.json());
-app.use(cors({
-  origin: "https://blogs-pso66.netlify.app",
-  credentials: true
-}));
+app.use(cors());
 
 // public the images folder
 // app.use('/images',express.static(path.join(__dirname,"/images")))
