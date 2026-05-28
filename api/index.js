@@ -19,7 +19,7 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-  origin: "https://blogs-ps066.netlify.app",
+  origin: "https://blogs-pso66.netlify.app",
   credentials: true
 }));
 
