@@ -109,3 +109,24 @@
 .updateBtn:active{
     transform: scale(0.9);
 }
+
+@media (max-width: 768px){
+    .singlePostWrapper{
+        padding-right: 20px;
+    }
+    .singlePostImg{
+        height: 220px;
+    }
+    .singlePostTitle{
+        font-size: 18px;
+    }
+    .singlePostInfo{
+        flex-direction: column;
+        gap: 5px;
+        font-size: 14px;
+    }
+    .updateBtn{
+        align-self: stretch;
+        width: 100%;
+    }
+}

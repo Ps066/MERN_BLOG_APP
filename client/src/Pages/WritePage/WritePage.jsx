@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import "./writepage.css";
 import { AuthContext } from "../../Context/Context";
+import { useNavigate } from "react-router-dom";
 import axios from "../../api"
 
 const WritePage = () => {
@@ -9,8 +10,11 @@ const WritePage = () => {
     const [dec, setDesc] = useState("")
     const [file, setFile] = useState(null)
 
-    // importing currently active user 
+    // importing currently active user
     const {user} = useContext(AuthContext)
+
+    // navigation hook (client-side, avoids full-page reload hitting the host)
+    const navigate = useNavigate();
 
 
     // function to handel post submit
@@ -37,7 +41,7 @@ const WritePage = () => {
 }
       try {
         const res = await axios.post("/post", newPost);
-        window.location.replace("/post/"+res.data._id);
+        navigate("/post/"+res.data._id);
       } catch (error) {
         console.log(error);
       }

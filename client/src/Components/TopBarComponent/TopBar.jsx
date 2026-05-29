@@ -2,12 +2,9 @@ import "./topbar.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
 import { useContext } from "react";
+import profilePlaceholder from "../../assets/profile.png";
 
 const TopBar = () => {
-
-  //path to images
-  const PF = process.env.REACT_APP_IMAGE_PATH;
-
   // import user and dispatch
   const { user, dispatch } = useContext(AuthContext);
 
@@ -54,11 +51,7 @@ const TopBar = () => {
         <Link to="/settings">
           {user ? (
             <img
-              src={
-                user.profilePic
-                  ? PF+user.profilePic
-                  : "https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png"
-              }
+              src={user.profilePic ? user.profilePic : profilePlaceholder}
               alt=''
               className='topImg'
             />

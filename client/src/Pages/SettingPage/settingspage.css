@@ -93,3 +93,16 @@
     margin-top: 20px;
     padding: 10px;
 }
+
+@media (max-width: 768px){
+    .settingsPage{
+        flex-direction: column;
+    }
+    .settingUpdateTitle{
+        font-size: 24px;
+    }
+    .settingDeleteTitle{
+        font-size: 11px;
+        padding: 8px 14px;
+    }
+}

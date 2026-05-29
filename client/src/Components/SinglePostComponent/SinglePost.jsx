@@ -1,15 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./singlepost.css";
 import { useContext, useEffect, useState } from "react";
 import axios from "../../api"
 import { AuthContext } from "../../Context/Context";
 
 const SinglePost = () => {
-  //path to images
-  const PF = process.env.REACT_APP_IMAGE_PATH;
-
   // fetching currently logged in user
   const { user } = useContext(AuthContext);
+
+  // navigation hook (client-side, avoids full-page reload hitting the host)
+  const navigate = useNavigate();
 
   // usestate to store the current post state
   const [viewPost, setViewPost] = useState([]);
@@ -43,7 +43,7 @@ const SinglePost = () => {
       await axios.delete(`/post/${viewPost._id}`, {
         data: { username: user.username },
       });
-      window.location.replace("/");
+      navigate("/");
     } catch (error) {}
   };
 
@@ -76,7 +76,7 @@ const SinglePost = () => {
     <div className='singlePost'>
       <div className='singlePostWrapper'>
         {viewPost.photo && (
-          <img src={PF + viewPost.photo} alt='' className='singlePostImg' />
+          <img src={viewPost.photo} alt='' className='singlePostImg' />
         )}
 
         {editMode ? (

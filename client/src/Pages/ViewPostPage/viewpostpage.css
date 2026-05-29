@@ -1,3 +1,9 @@
 .viewPost{
     display: flex;
 }
+
+@media (max-width: 768px){
+    .viewPost{
+        flex-direction: column;
+    }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./registerpage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "../../api"
 
 const RegisterPage = () => {
@@ -12,6 +12,9 @@ const RegisterPage = () => {
   // useStae to store error status
   const [err, setErr] = useState(false);
 
+  // navigation hook (client-side, avoids full-page reload hitting the host)
+  const navigate = useNavigate();
+
   // function to handel submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +25,7 @@ const RegisterPage = () => {
         email,
         password,
       });
-      res.data && window.location.replace("/login");
+      res.data && navigate("/login");
     } catch (error) {
       setErr(true);
     }

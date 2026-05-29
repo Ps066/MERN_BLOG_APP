@@ -3,7 +3,7 @@ import Header from '../../Components/HeaderComponent/Header'
 import Posts from '../../Components/PostsComponent/Posts'
 import SideBar from '../../Components/SideBarComponent/SideBar'
 import './homepage.css'
-import axios from "axios"
+import axios from "../../api"
 import { useLocation } from 'react-router-dom'
 
 const HomePage = () => {

@@ -69,3 +69,43 @@
     justify-content: center;
     cursor: pointer;
 }
+
+@media (max-width: 768px){
+    .topListItem{
+        margin-right: 12px;
+        font-size: 15px;
+    }
+    .topIcons{
+        font-size: 17px;
+        margin-right: 6px;
+    }
+    .topLeft, .topRight{
+        flex: 2;
+    }
+}
+
+@media (max-width: 600px){
+    .topLeft{
+        display: none;
+    }
+    .topCenter{
+        flex: 8;
+    }
+    .topList{
+        flex-wrap: wrap;
+    }
+    .topListItem{
+        margin-right: 10px;
+        font-size: 13px;
+    }
+    .topSearchIcon{
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 400px){
+    .topListItem{
+        margin-right: 8px;
+        font-size: 12px;
+    }
+}

@@ -61,3 +61,46 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+@media (max-width: 960px){
+    .writeImg{
+        margin-left: 80px;
+        width: 80vw;
+    }
+    .writeFormGroup{
+        margin-left: 80px;
+    }
+    .writeInput{
+        width: 80vw;
+    }
+}
+
+@media (max-width: 768px){
+    .write{
+        padding-top: 25px;
+        padding-inline: 15px;
+    }
+    .writeImg{
+        margin-left: 0;
+        width: 100%;
+        height: 200px;
+    }
+    .writeFormGroup{
+        margin-left: 0;
+        width: 100%;
+    }
+    .writeInput{
+        width: 100%;
+        min-width: 0;
+        font-size: 22px;
+        padding: 12px;
+    }
+    .writeText{
+        font-size: 16px;
+    }
+    .writeSubmit{
+        position: static;
+        width: 100%;
+        margin-top: 15px;
+    }
+}

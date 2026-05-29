@@ -4,12 +4,10 @@ import "./settingspage.css";
 import { AuthContext } from "../../Context/Context";
 import axios from "../../api"
 import { useNavigate } from "react-router-dom";
+import profilePlaceholder from "../../assets/profile.png";
 
 
 const SettingsPage = () => {
-  //path to images
-  const PF = process.env.REACT_APP_IMAGE_PATH;
-
   // navigtion hook
   const navigate = useNavigate();
 
@@ -36,13 +34,10 @@ const SettingsPage = () => {
 
     if(profilepic){
       const data = new FormData();
-      const fileExtension = profilepic.name.split('.').pop(); // Extract file extension
-      const filename = `${Date.now()}_${user._id}.${fileExtension}`;
-      data.append("name", filename);
       data.append("file", profilepic);
-      updateUser.profilePic = filename;
       try {
-        await axios.post('/upload',data);
+        const res = await axios.post('/upload',data);
+        updateUser.profilePic = res.data.url;
       } catch (error) {
         console.log(error);
       }
@@ -89,14 +84,11 @@ const SettingsPage = () => {
           <div className='settingsPP'>
             <img
               src={
-                profilepic?(
-                  URL.createObjectURL(profilepic)
-                ):(
-                  user.profilePic
-                  ? PF+user.profilePic
-                  : "https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png"
-                )
-                
+                profilepic
+                  ? URL.createObjectURL(profilepic)
+                  : user.profilePic
+                  ? user.profilePic
+                  : profilePlaceholder
               }
               alt=''
               className='settingProfileImg'

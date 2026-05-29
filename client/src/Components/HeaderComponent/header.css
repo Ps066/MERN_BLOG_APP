@@ -28,3 +28,24 @@
     /* margin-top: 80px; */
     object-fit: cover;
 }
+
+@media (max-width: 960px){
+    .headerTitleLg{
+        font-size: 60px;
+    }
+    .headerImg{
+        height: 420px;
+    }
+}
+
+@media (max-width: 640px){
+    .headerTitleSm{
+        font-size: 16px;
+    }
+    .headerTitleLg{
+        font-size: 40px;
+    }
+    .headerImg{
+        height: 300px;
+    }
+}
